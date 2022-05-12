@@ -1,0 +1,72 @@
+body{
+  padding-top:80px;
+  /* word-wrap:break-word; */
+  background-image: url(https://medcitynews.com/uploads/2019/04/GettyImages-938657906.jpg);
+  background-size: 100%;
+  font-family: 'Antonio', sans-serif;
+}
+img{
+  height: 200px;
+}
+
+.logoPic{
+  width: auto;
+  /* position: absolute; */
+  right: 100px;
+}
+
+.containerBoba{
+  width:80%;
+  background-color: rgb(95, 189, 95);
+  margin-left:10%;
+}
+
+h3,h4{
+  text-align: center;
+  font-weight:bolder;
+  font-family: 'Antonio', sans-serif;
+}
+.jumbotron{
+float: left;
+width:100%;
+font-family: 'Antonio', sans-serif;
+}
+
+.messages{
+  padding:5%;
+  font-size: 15px;
+  margin-left:25%;
+  font-weight: bolder;
+  background-color: rgb(103, 206, 103);
+  width: 55%;
+}
+.cashierContainer{
+  position:absolute;
+  bottom:25%;
+  right:10%;
+  background-color: rgb(93, 175, 93);
+  width:45%;
+  height:50%;
+  text-align: center;
+}
+.well{
+padding:5%;
+margin-left:10%;
+font-size: 15px;
+}
+.publicBrowser{
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+button{
+  margin:5%;
+}
+
+ul{
+  list-style: none;
+}
+
+
+

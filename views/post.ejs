@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="post.css">
+    <title>RAlief Rx Forum</title>
+</head>
+
+<body>
+    <div class="page-header text-center">
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="/feed" class="btn btn-default btn-sm">Feed</a>
+        <a href="/profile" class="btn btn-default btn-sm">Profile</a>
+        <a href="/map" class="btn btn-default btn-sm">Finder</a>
+        <a href="/bookmark" class="btn btn-default btn-sm">Saved Items</a>
+        <h1>Drug</h1>
+    </div>
+
+    <div class="row">
+        <div class="post">
+            <a href="/post?id=<%=post._id%>"><img class="picture" src="<%=post.image %>"></a><br>
+            <span class="caption">Location: <%= post.caption %></span> <br>
+            <span class="drug">Drug: <%= post.drug %></span><br>
+            <span class="drug">Feedback: <%= post.feedback %></span><br>
+            <button class="commentBox">Comment</button>
+            <form class="comment hide">
+                <input class="text " type="text">
+                <input class="submitComment" type="submit" value=">">
+                <button class="cancel">Cancel</button>
+            </form>
+            <% for(i = comments.length-1; i > 0; i--) { %>
+            <% if (comments[i].post == post._id) { %>
+            <p class="comments"><%= comments[i].comment%> | <span><%= comments[i].timestamp %></span></p>
+            <% } %>
+            <% } %>
+        </div>
+    </div>
+    <script type="text/javascript" src="post.js"></script>
+</body>
+
+</html>

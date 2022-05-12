@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+
+<head>
+  <title>RAlief Rx Forum</title>
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/e69b0c6ae8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="feed.css">
+</head>
+
+<body>
+  <div class="containerBoba">
+    <div class="page-header text-center">
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      <a href="/feed" class="btn btn-default btn-sm">Feed</a>
+      <a href="/profile" class="btn btn-default btn-sm">Profile</a>
+      <!-- <a href="/map" class="btn btn-default btn-sm">Finder</a> -->
+      <a href="/bookmark" class="btn btn-default btn-sm">Saved Items</a>
+      <h1><span class="fa fa-file-prescription"></span> Feed</h1>
+    </div>
+
+    <div class="inputSection">
+      <form id="createPost">
+        <input type="file" class="picture" name="file-to-upload">
+        <input type="text" class="caption" name="caption" placeholder="Pharmacy Place">
+        <input type="text" class="drug" name="drug" placeholder="Name of Drug">
+        <input type="text" class="feedback" name="drug" placeholder="Feedback or Comment">
+        <input type="submit" value="POST!">
+      </form>
+      <div class="searchBarSection">
+        <input id="searchQuery" type="text" class="search" placeholder="Browse Drug">
+        <button id="searchButton" value="SEARCH DRUG">Search</button>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <ul id="feed">
+          <% for(var i=0; i<posts.length; i++) {%>
+          <li class="post">
+            <a href="/post?id=<%=posts[i]._id%>"><img class="picture" src="<%=posts[i].image %>"></a><br>
+            <span><i class="far fa-save"></i></span><br>
+            <span class="caption">Pharmacy Place: <%= posts[i].caption %></span> <br>
+            <span class="drug">Drug Name: <%= posts[i].drug %></span><br>
+            <span class="feedback">Feedback: <%= posts[i].feedback %></span><br>
+            <button class="commentBox" style="display: none;">Comment</button>
+            <form class="comment hide">
+              <input class="text" type="text">
+              <input class="submitComment" type="submit" value="click">
+              <!-- <button class="cancel">Cancel</button> -->
+            </form>
+          </li>
+          <% } %>
+        </ul>
+        </ul>
+
+      </div>
+  </div>
+
+      <script src="feed.js"></script>
+
+</body>
+
+</html>

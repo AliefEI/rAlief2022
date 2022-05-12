@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="profile.css">
+  <title>RAlief Rx Forum</title>
+</head>
+
+<body>
+  <div class="page-header text-center">
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <a href="/feed" class="btn btn-default btn-sm">Feed</a>
+    <a href="/profile" class="btn btn-default btn-sm">Profile</a>
+    <!-- <a href="/map" class="btn btn-default btn-sm">Finder</a> -->
+    <a href="/bookmark" class="btn btn-default btn-sm">Saved Items</a>
+    <h1>Profile Page</h1>
+  </div>
+
+  <div class="inputSection">
+    <form id="createPost">
+      <input type="file" class="picture" name="file-to-upload">
+      <input type="text" class="caption" name="caption" placeholder="Pharmacy Place">
+      <input type="text" class="drug" name="drug" placeholder="Name of Drug">
+      <input type="text" class="feedback" name="drug" placeholder="Feedback or Comment">
+      <input type="submit" value="POST!">
+    </form>
+
+  </div>
+
+  <div class="row">
+
+    <ul id="myPosts">
+      <% for(var i=0; i<posts.length; i++) {%>
+      <% if( posts[i].user.toString() == user._id.toString()) { %>
+      <li class="post">
+        <a class="link" href="/post?id=<%=posts[i]._id%>"><img class="picture" src="<%=posts[i].image %>"></a><br>
+        <span class="caption">Location: <%= posts[i].caption %></span><br>
+        <span class="drug">Drug: <%= posts[i].drug %></span><br>
+        <span class="feedback">Feedback: <%= posts[i].feedback %></span><br>
+        <button><i class="fa fa-trash" style="color: black; font-size: 20px;"></i></button>
+      </li>
+      <% } %>
+      <% } %>
+    </ul>
+    <script type="text/javascript" src="main.js"></script>
+  </div>
+</body>
+
+</html>

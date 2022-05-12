@@ -1,0 +1,66 @@
+
+<!Doctype html>
+<html>
+<head>
+    <title>RAlief Rx Forum</title>
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> -->
+      <link rel="stylesheet" href="font-awesome.min.css">
+      <script src="https://kit.fontawesome.com/e69b0c6ae8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="feed.css">
+</head>
+<body> 
+<div class="containerBoba">
+  <div class="page-header text-center">
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <a href="/feed" class="btn btn-default btn-sm">Feed</a>
+    <a href="/profile" class="btn btn-default btn-sm">Profile</a>
+    <a href="/map" class="btn btn-default btn-sm">Finder</a>
+    <a href="/bookmark" class="btn btn-default btn-sm">Saved Items</a>
+    <h1><span class="fa fa-file-prescription"></span> Feed</h1>
+</div>
+
+    <div class="row">
+
+      <form id="createPost">
+        <input type="file" class="picture" name="file-to-upload">
+        <input type="text" class="caption" name="caption" placeholder="Pharmacy Place">
+        <input type="text" class="drug" name="drug" placeholder="Name of Drug">
+        <input type="text" class="feedback" name="drug" placeholder="Feedback or Comment">
+        <input type="submit" value="POST!">
+      </form>
+    
+      <form id="searchDrug">
+        <input type="text" class="search" placeholder="Browse Drug">
+        <input type="submit" value="SEARCH DRUG">
+      </form>
+
+
+        <div class="col-sm-6">
+          <ul id="feed">
+            <% for(var i=0; i<result.length; i++) {%>
+            <li class="post">
+              <a href="/post?id=<%=result[i]._id%>"><img class="picture" src="<%=result[i].image %>"></a>
+              <span><br><i class="far fa-save"></i></span><br>
+              <span class="caption">Pharmacy Place: <%= result[i].caption %></span> <br>
+              <span class="drug">Drug Name: <%= result[i].drug %></span><br>
+              <span class="feedback">Feedback: <%= result[i].feedback %></span><br>
+              <button class="commentBox" style="display: none;">Comment</button>
+              <form class="comment hide">
+                <input class="text "type="text">
+                <input class="submitComment" type="submit" value="click">
+                <!-- <button class="cancel">Cancel</button> -->
+              </form>
+            </li>
+          <% } %>
+          </ul>
+        </ul>
+
+</div>
+
+
+<script src="feed.js"></script>
+
+</body>
+
+</html>

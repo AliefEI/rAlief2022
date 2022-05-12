@@ -1,0 +1,44 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>RAlief Rx Forum</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/e69b0c6ae8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bookmark.css">
+</head>
+
+<body>
+    <div class="page-header text-center">
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="/feed" class="btn btn-default btn-sm">Feed</a>
+        <a href="/profile" class="btn btn-default btn-sm">Profile</a>
+        <!-- <a href="/map" class="btn btn-default btn-sm">Finder</a> -->
+        <a href="/bookmark" class="btn btn-default btn-sm">Saved Items</a>
+        <h1>Saved Items</h1>
+    </div>
+    
+    <div class="row">
+        <ul id="myBookmark"> <%= bookmark.length %>
+            <% for(var i=0; i<bookmark.length; i++) {%>
+            <li class="post">
+                <a class="link" href="/post?id=<%=bookmark[i]._id%>"><img class="picture" src="<%=bookmark[i].image %>"></a><br>
+                <span class="caption">Location: <%= bookmark[i].caption %></span><br>
+                <span class="drug">Drug: <%= bookmark[i].drug %></span><br>
+                <span class="feedback">Feedback: <%= bookmark[i].Feedback %></span><br>
+                <button><i class="fa fa-trash"></i></button>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <script src="bookmark.js"></script>
+
+
+
+</body>
+
+
+
+
+</html>
